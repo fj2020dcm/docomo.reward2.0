@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>docomoお申込み特典・確認シート</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap');
+        
+        :root {
+            --docomo-red: #E11D48;
+            --slate-premium: #0f172a;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: #f1f5f9;
+            margin: 0;
+            padding: 0;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        /* A4サイズの厳密な定義 */
+        .page {
+            width: 210mm;
+            height: 296mm;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        @media print {
+            body { background: none; }
+            .page {
+                box-shadow: none;
+                margin: 0;
+                width: 210mm;
+                height: 297mm;
+            }
+        }
+
+        .grid-table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        .grid-table th, .grid-table td {
+            border: 1px solid #cbd5e1;
+        }
+
+        .line-guide {
+            border-bottom: 1px solid #e2e8f0;
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        .bg-premium { background-color: var(--slate-premium); }
+
+        /* ロゴ画像のフィッティング */
+        .docomo-logo {
+            height: 32px;
+            width: auto;
+            object-fit: contain;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="page">
+        <!-- プレミアム・ダークヘッダー -->
+        <div class="bg-premium text-white px-10 py-7 flex justify-between items-center border-b-4 border-rose-600">
+            <div class="flex flex-col space-y-3">
+                <!-- 指定のロゴ画像 -->
+                <img src="https://lh3.googleusercontent.com/d/1iu8u7bTIUyCxtTuEd" alt="NTT docomo ロゴ" class="docomo-logo" onerror="this.style.display='none'">
+                <h1 class="text-3xl font-black tracking-tighter leading-none">ドコモお申込み特典 <span class="text-xl font-medium text-slate-400 ml-2">確認シート</span></h1>
+            </div>
+            
+            <div class="space-y-2">
+                <!-- 右上入力枠 (サイズを完全に統一) -->
+                <div class="flex items-center justify-end space-x-3">
+                    <span class="text-[10px] font-bold text-slate-400 text-right w-12">案内日</span>
+                    <div class="bg-white rounded px-2 flex items-center justify-between text-slate-900 font-bold w-56 h-8 shadow-inner">
+                        <div class="flex items-center space-x-1">
+                            <span class="text-[10px] text-slate-300">20</span>
+                            <div class="w-8 h-4 border-b border-slate-200"></div>
+                            <span class="text-[9px] text-slate-400">年</span>
+                        </div>
+                        <div class="flex items-center space-x-1">
+                            <div class="w-6 h-4 border-b border-slate-200"></div>
+                            <span class="text-[9px] text-slate-400">月</span>
+                        </div>
+                        <div class="flex items-center space-x-1">
+                            <div class="w-6 h-4 border-b border-slate-200"></div>
+                            <span class="text-[9px] text-slate-400">日</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex items-center justify-end space-x-3">
+                    <span class="text-[10px] font-bold text-slate-400 text-right w-12">店舗名</span>
+                    <div class="bg-white rounded px-3 w-56 h-8 shadow-inner"></div>
+                </div>
+                <div class="flex items-center justify-end space-x-3">
+                    <span class="text-[10px] font-bold text-slate-400 text-right w-12">担当者</span>
+                    <div class="bg-white rounded px-3 w-56 h-8 shadow-inner"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="px-12 py-6 flex-grow flex flex-col">
+            <!-- タイトルセパレーター -->
+            <div class="text-center relative my-4">
+                <div class="absolute inset-0 flex items-center" aria-hidden="true">
+                    <div class="w-full border-t border-slate-200"></div>
+                </div>
+                <div class="relative">
+                    <span class="bg-white px-8 text-2xl font-black text-slate-800 tracking-[0.6em] leading-none">特典内容</span>
+                </div>
+            </div>
+
+            <div class="bg-slate-50 border-l-4 border-slate-900 p-4 shadow-sm mb-4">
+                <p class="text-slate-800 text-sm font-bold flex items-center">
+                    <svg class="w-4 h-4 mr-2 text-rose-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                    </svg>
+                    こちらの特典内容で、お手続きを開始いたします。
+                </p>
+            </div>
+
+            <!-- 商材グリッドテーブル -->
+            <div class="flex-grow">
+                <table class="grid-table w-full text-slate-800">
+                    <thead class="bg-slate-50">
+                        <tr class="border-b-2 border-slate-900">
+                            <th class="py-2 text-[10px] font-bold text-slate-500 w-16 uppercase">適用</th>
+                            <th class="py-2 px-5 text-left font-bold text-slate-700 text-sm">商材・キャンペーン項目</th>
+                            <th class="py-2 text-center w-40 font-bold text-slate-700 text-sm">特典単価 (¥)</th>
+                            <th class="py-2 text-center w-20 font-bold text-slate-700 text-sm">数量</th>
+                            <th class="py-2 text-center w-36 font-bold text-slate-700 text-sm">小計</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="py-5 text-center"><div class="mx-auto w-6 h-6 border-2 border-slate-300 rounded shadow-inner bg-white"></div></td>
+                            <td class="py-5 px-5 font-bold text-slate-800 border-r border-slate-100">ドコモ光</td>
+                            <td class="py-5 px-4 relative bg-slate-50/30"><div class="line-guide"></div></td>
+                            <td class="py-5"><div class="line-guide mx-auto w-10"></div></td>
+                            <td class="py-5 bg-slate-50/50"><div class="line-guide mx-auto w-24"></div></td>
+                        </tr>
+                        <tr>
+                            <td class="py-5 text-center"><div class="mx-auto w-6 h-6 border-2 border-slate-300 rounded shadow-inner bg-white"></div></td>
+                            <td class="py-5 px-5 font-bold text-slate-800 border-r border-slate-100">ドコモ光+ドコモ端末セット</td>
+                            <td class="py-5 px-4 relative bg-slate-50/30"><div class="line-guide"></div></td>
+                            <td class="py-5"><div class="line-guide mx-auto w-10"></div></td>
+                            <td class="py-5 bg-slate-50/50"><div class="line-guide mx-auto w-24"></div></td>
+                        </tr>
+                        <tr>
+                            <td class="py-5 text-center"><div class="mx-auto w-6 h-6 border-2 border-slate-300 rounded shadow-inner bg-white"></div></td>
+                            <td class="py-5 px-5 font-bold text-slate-800 border-r border-slate-100">home5G</td>
+                            <td class="py-5 px-4 relative bg-slate-50/30"><div class="line-guide"></div></td>
+                            <td class="py-5"><div class="line-guide mx-auto w-10"></div></td>
+                            <td class="py-5 bg-slate-50/50"><div class="line-guide mx-auto w-24"></div></td>
+                        </tr>
+                        <tr>
+                            <td class="py-5 text-center"><div class="mx-auto w-6 h-6 border-2 border-slate-300 rounded shadow-inner bg-white"></div></td>
+                            <td class="py-5 px-5 font-bold text-slate-800 border-r border-slate-100">dカード</td>
+                            <td class="py-5 px-4 relative bg-slate-50/30"><div class="line-guide"></div></td>
+                            <td class="py-5"><div class="line-guide mx-auto w-10"></div></td>
+                            <td class="py-5 bg-slate-50/50"><div class="line-guide mx-auto w-24"></div></td>
+                        </tr>
+                        <tr>
+                            <td class="py-5 text-center"><div class="mx-auto w-6 h-6 border-2 border-slate-300 rounded shadow-inner bg-white"></div></td>
+                            <td class="py-5 px-5 font-bold text-slate-800 border-r border-slate-100">SIMのみMNP</td>
+                            <td class="py-5 px-4 relative bg-slate-50/30"><div class="line-guide"></div></td>
+                            <td class="py-5"><div class="line-guide mx-auto w-10"></div></td>
+                            <td class="py-5 bg-slate-50/50"><div class="line-guide mx-auto w-24"></div></td>
+                        </tr>
+                        <tr>
+                            <td class="py-5 text-center"><div class="mx-auto w-6 h-6 border-2 border-slate-300 rounded shadow-inner bg-white"></div></td>
+                            <td class="py-5 px-5 font-bold text-slate-800 border-r border-slate-100">ドコモでんき</td>
+                            <td class="py-5 px-4 relative bg-slate-50/30"><div class="line-guide"></div></td>
+                            <td class="py-5"><div class="line-guide mx-auto w-10"></div></td>
+                            <td class="py-5 bg-slate-50/50"><div class="line-guide mx-auto w-24"></div></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- 合計金額セクション -->
+            <div class="flex justify-between items-end mb-6 pt-4">
+                <div class="text-slate-400 text-[9px] font-medium leading-relaxed italic pr-6">
+                    ※記載金額は全て税込価格です。<br>
+                    ※キャンペーンにより適用条件が異なります。
+                </div>
+                <div class="border-[4px] border-rose-600 rounded-xl px-10 py-4 min-w-[420px] text-right bg-white shadow-lg flex items-center justify-between">
+                    <span class="text-lg font-black tracking-widest text-rose-600 whitespace-nowrap mr-8">総合計特典額</span>
+                    <div class="flex items-baseline flex-grow justify-end border-b-[3px] border-rose-100 pb-1 min-w-[120px]">
+                        <div class="w-full h-8"></div>
+                        <span class="text-xl ml-4 font-black text-rose-600">円</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 署名エリア (最下部固定デザイン) -->
+            <div class="bg-slate-50 rounded-2xl p-8 border border-slate-200 shadow-sm relative overflow-hidden mb-2">
+                <div class="absolute top-0 left-0 w-2 h-full bg-slate-900"></div>
+                
+                <div class="flex items-center space-x-6 mb-8">
+                    <div class="w-8 h-8 border-[3px] border-slate-900 rounded-lg bg-white shadow-inner flex items-center justify-center">
+                        <svg class="w-4 h-4 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                    </div>
+                    <span class="text-lg font-black text-slate-800 tracking-tight">上記の内容を承諾し、申込みを進めます。</span>
+                </div>
+
+                <div class="w-full flex items-end pt-2">
+                    <div class="flex flex-col flex-shrink-0 border-l-4 border-rose-600 pl-4 mb-2">
+                        <span class="text-lg font-black text-slate-800 tracking-tighter">お客様ご署名</span>
+                    </div>
+                    <!-- 真っ白な記入欄 -->
+                    <div class="ml-10 border-b-[3px] border-slate-900 flex-grow h-16 relative bg-white shadow-sm"></div>
+                </div>
+            </div>
+
+            <!-- フッター -->
+            <footer class="text-center pt-2 pb-4 text-[10px] text-slate-400 font-bold tracking-[0.4em] flex flex-col items-center">
+                <div class="flex items-center space-x-6">
+                    <div class="h-[1px] w-12 bg-slate-200"></div>
+                    <span>NTT docomo</span>
+                    <div class="h-[1px] w-12 bg-slate-200"></div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+</body>
+</html>
+
